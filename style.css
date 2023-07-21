@@ -177,7 +177,7 @@ nav ul li a:hover::after {
 
 .prices-list p span{
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .prices-list div {
@@ -278,15 +278,21 @@ nav ul li a:hover::after {
 }
 
 .order-info {
-    border-radius: 50px;
+    width:80%;
+    margin:auto;
+    scale: 80%;
+    text-align: center;
+    border-radius: 100px;
     background: #262626;
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
-    border-right: 10px;
+    border-right: 30px;
 }
 
 .order-info h2{
+    color:#4fc3fd;
+    text-shadow: 0px 4px 10px #3b70b1;
     padding: 30px 0;
     font-size: 28px;
 }
