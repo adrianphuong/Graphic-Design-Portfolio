@@ -85,8 +85,7 @@ nav ul li a:hover::after {
 
 #about {
     letter-spacing: 3px;
-    margin-top: 270px;
-    padding: 40px 0;
+    padding: 300px 0;
     color: #fff;
 }
 
@@ -157,8 +156,8 @@ nav ul li a:hover::after {
 
 /* ------------------services------------------ */
 #pricing {
-    margin-top: 600px;
-    padding: 40px 0;
+    margin-top: 800px;
+    padding: 80px 0;
     letter-spacing: 5px;
 }
 
@@ -215,8 +214,7 @@ nav ul li a:hover::after {
 }
 /*---------portfolio------------ */
 #work {
-    margin-top: 0px;
-    padding: 0px 0;
+    padding: 80px 0;
 }
 
 .work-list {
@@ -247,7 +245,7 @@ nav ul li a:hover::after {
 
 #reviews{
     letter-spacing: 4px;
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .review-list {
@@ -278,7 +276,7 @@ nav ul li a:hover::after {
 }
 
 .order-info {
-    width:80%;
+    width:100%;
     margin:auto;
     scale: 80%;
     text-align: center;
@@ -312,7 +310,7 @@ nav ul li a:hover::after {
 
 #contact {
     letter-spacing: 5px;
-    margin-top: 70px;
+    padding: 80px 0;
 }
 
 .contact-left{
@@ -404,6 +402,12 @@ nav .fa-solid{
     display: none;
 }
 @media only screen and (max-width: 600px){
+    .header-text p {
+        margin-top: -80px;
+    }
+    #pricing {
+        margin-top: 1200px;
+    }
     #header{
         background-image: url(images/background2.png);
     }
@@ -422,7 +426,7 @@ nav .fa-solid{
         background: #4fc3fd;
         position: fixed;
         top: 0;
-        right: 200px;
+        right: -200px;
         width: 200px;
         height: 100vh;
         padding-top: 50px;
