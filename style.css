@@ -184,6 +184,10 @@ nav ul li a:hover::after {
     flex-basis: 60%;
 }
 
+.about-col-2 p{
+    margin-top: 50px;
+}
+
 #about p {
     font-weight: 200;
     font-size: 17px;
