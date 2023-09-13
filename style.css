@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
@@ -13,12 +13,40 @@ body{
     background: #080808;
     color: #fff;
 }
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: transitionIN 1s, fadeOut 0.5s .5s forwards;
+    z-index: 99999; /* Set a high z-index value */
+}
+
+@keyframes transitionIN {
+    0% {
+        background: #fff;
+        border-radius: 100%;
+        transform: translate(-50%, -50%) scale(2);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 #header{
     width: 100%;
     height: 100vh;
     background-image: url(images/background.png);
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
 }
 .container {
     padding: 10px 10%;
@@ -66,6 +94,10 @@ nav ul li a:hover::after {
 .header-text {
     margin-top: 20%;
     font-size: 30px;
+    transition: 0.5s;
+    animation:
+        topDown 2s,
+        fadeIn 2s
 }
 
 .header-text p {
@@ -73,20 +105,61 @@ nav ul li a:hover::after {
 }
 
 .header-text h1 {
-    font-size: 50px;
+    font-weight: normal;
+    font-size: 60px;
     margin-top: 20px;
 }
 
 .header-text h1 span {
-    color:#4fc3fd;
+    font-weight: bolder;
+    --bg-size: 400%;
+    --color-one: hsl(194, 100%, 65%);
+    --color-two: hsl(217, 71%, 51%);
+    letter-spacing: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one)
+        )
+        0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation:
+        move-bg 8s infinite linear
+}
+
+@keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+}
+
+@keyframes topDown {
+    from {
+        transform:translateY(-20px);
+    }
+    to {
+        transform:translateY(0px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
 /* ------------------about------------------ */
 
 #about {
     letter-spacing: 3px;
-    padding: 400px 0;
     color: #fff;
+    margin-top:450px;
 }
 
 .row{
@@ -100,12 +173,43 @@ nav ul li a:hover::after {
 }
 
 .about-col-1 img{
+    scale:90%;
+    border-radius: 100px;
     width: 90%;
-    border-radius: 50px;
+    animation:
+        fadeIn 2s;
 }
 
 .about-col-2 {
     flex-basis: 60%;
+}
+
+#about p {
+    font-weight: 200;
+    font-size: 17px;
+    line-height: 60px;
+    animation:
+        fadeIn 3s;
+}
+
+#about p span {
+    font-weight: 900;
+    --bg-size: 400%;
+    --color-one: hsl(194, 100%, 65%);
+    --color-two: hsl(217, 71%, 51%);
+    letter-spacing: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one)
+        )
+        0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation:
+        move-bg 8s infinite linear
 }
 
 .sub-title {
@@ -154,67 +258,13 @@ nav ul li a:hover::after {
     
 }
 
-/* ------------------services------------------ */
-#pricing {
-    margin-top: 800px;
-    padding: 80px 0;
-    letter-spacing: 5px;
-}
-
-.prices-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
-
-.prices-list p{
-    margin-top: 20px;
-    word-spacing: 3px;
-}
-
-.prices-list p span{
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.prices-list div {
-    border-radius: 50px;
-    background: #262626;
-    padding: 40px;
-    font-size: 13px;
-    font-weight: 300;
-    border-right: 10px;
-    transition: background 0.5s, transform 0.5s;
-}
-
-.prices-list div i {
-    font-size: 50px;
-    margin-bottom: 30px;
-}
-
-.prices-list div h2 {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.prices-list div a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 12px;
-    margin-top: 20px;
-    display: inline-block;
-}
-
-.prices-list div:hover {
-    background: #4fc3fd;
-    transform: translateY(-10px);
-}
-/*---------portfolio------------ */
 #work {
-    padding: 80px 0;
+    margin-top: 700px;
+}
+
+.sub-title {
+    text-align: center;
+    text-shadow: 0 10px 20px #1b526c;
 }
 
 .work-list {
@@ -266,6 +316,27 @@ nav ul li a:hover::after {
     border-right: 10px;
 }
 
+.review-list div h2 {
+    font-weight: 900;
+    margin-bottom: 20px;
+    --bg-size: 400%;
+    --color-one: hsl(194, 100%, 65%);
+    --color-two: hsl(217, 71%, 51%);
+    letter-spacing: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one)
+        )
+        0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation:
+        move-bg 8s infinite linear
+}
+
 .review-list div p {
     margin-top: 20px;
 }
@@ -292,18 +363,20 @@ nav ul li a:hover::after {
     color:#4fc3fd;
     text-shadow: 0px 4px 10px #3b70b1;
     padding: 30px 0;
-    font-size: 28px;
+    font-size: 40px;
 }
 
 .order-info p {
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     line-height: 30px;
-    font-size: 16px;
+    font-size: 20px;
+    line-height: 50px;
     font-style: italic;
 }
 
 .order-info p span {
     font-weight: bold;
+    text-shadow: 0px 4px 10px #3b70b1;
 }
 
 /* ------ contact ------ */
